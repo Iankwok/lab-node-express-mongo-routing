@@ -22,15 +22,13 @@ router.post("/tweets", function(req, res){
   });
 })
 
-// DELETE
-router.delete("/tweets/:id", function(req, res){
-  for(i in tweets){
-    if(tweets[i]["id"] == req.params.id){
-      delete tweets[i]
-    }
-  }
-  res.json({message : 'deleted' });
-});
+//Delete
+router.delete("/tweets/:id/edit", function(req, res){
+  Tweet.remove({ '_id' : req.params.id }, function(err) {
+    res.send((err === null) ? { msg: '' } : { msg:'error: ' + err });
+  });
 
+    res.redirect('/tweets');
+  });
 
 module.exports = router;

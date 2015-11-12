@@ -2,25 +2,27 @@
   <legend>Add an Tweet</legend>
   <form method="POST" action="/tweets">
     <div class="form-group col-md-4">
-      <input name="tweet[name]" class="form-control" placeholder="Name"/>
+      <input name="tweets[name]" class="form-control" placeholder="Name"/>
     </div>
     <div class="form-group col-md-4">
-      <input name="tweet[tweet]"  class="form-control" placeholder="Tweets"/>
+      <input name="tweets[tweet]"  class="form-control" placeholder="Tweets"/>
     </div>
-
     <div class="form-group col-md-4">
       <button class="btn btn-success col-md-12">Add a Tweet</button>
     </div>
   </form>
 </fieldset>
 
-<ul>
-<% tweets.forEach( function(tweet){ %>
-  <li><h2><%= tweet.name %></h2>
-    <li><b>Tweet :  </b> <%= tweet.tweet %></li>
-    <li><button method='delete' action='/tweets/:id' class="btn btn-warning col-md-12">Delete</button></li>
-  </li>
+  <ul>
+    <% tweets.forEach( function(tweet){ %>
+      <li>
+        <h2><%= tweet.name %></h2>
+        <ul>
+          <li><b>Tweet :  </b> <%= tweet.tweet %></li>
 
-<% }) %>
-
-</ul>
+        </ul>
+      </li>
+      <button class="btn btn-warning">Edit</button>
+      <button class="btn btn-danger" method="DELETE" action="/tweets/:id/edit">Delete</button>
+    <% }) %>
+  </ul>

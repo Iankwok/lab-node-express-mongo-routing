@@ -1,11 +1,14 @@
 <fieldset>
   <legend>Edit an Tweet</legend>
-  <form method="GET" action="/tweets/<%= tweet.id%>/edit">
+  <h2><%= tweet.name %></h2>
+  <p><b>Tweet :  </b> <%= tweet.tweet %></p>
+
+  <form method="POST" action="/tweets/<%= tweet.id%>?_method=PUT">
     <div class="form-group col-md-4">
-      <input name="tweets[name]" class="form-control" placeholder="Name"/>
+      <input name="tweet[name]" class="form-control" placeholder="Name"/>
     </div>
     <div class="form-group col-md-4">
-      <input name="tweets[tweet]"  class="form-control" placeholder="Tweets"/>
+      <input name="tweet[tweet]"  class="form-control" placeholder="Tweets"/>
     </div>
     <div class="form-group col-md-4">
       <button class="btn btn-success col-md-12">Edit a Tweet</button>

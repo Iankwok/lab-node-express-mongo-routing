@@ -5,6 +5,7 @@ var logger         = require('morgan');
 var mongoose       = require('mongoose');
 var bodyParser     = require('body-parser');
 var expressLayouts = require('express-ejs-layouts');
+var methodOverride = require('method-override');
 
 var app = express();
 var router = express.Router();
@@ -19,6 +20,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(expressLayouts);
 app.engine('ejs', require('ejs').renderFile);
 app.set('view engine', 'ejs');
+app.use(methodOverride('_method'));
 
 // development error handler
 // will print stacktrace
@@ -36,5 +38,3 @@ app.use(require('./controllers/tweets'));
 
 app.listen(3000);
 console.log("Server Started");
-
-

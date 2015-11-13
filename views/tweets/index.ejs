@@ -22,7 +22,7 @@
 
         </ul>
       </li>
-      <button class="btn btn-warning">Edit</button>
-      <button class="btn btn-danger" method="DELETE" action="/tweets/:id/edit">Delete</button>
+      <form method="GET" action="/tweets/<%= tweet.id%>/edit"><button class="btn btn-warning">Edit</button></form>
+      <form method="DELETE" action="/tweets/<%= tweet.id%>/delete"><button class="btn btn-danger">Delete</button></form>
     <% }) %>
   </ul>

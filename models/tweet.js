@@ -1,8 +1,8 @@
 var mongoose = require('mongoose');
 
 var TweetsSchema = new mongoose.Schema({
-  name: String,
-  tweet: String
+  name:  {type:String, required: true},
+  tweet: {type:String, required: true}
 });
 
 var Tweet = mongoose.model('Tweets', TweetsSchema);

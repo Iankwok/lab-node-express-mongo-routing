@@ -1,0 +1,14 @@
+<fieldset>
+  <legend>Edit an Tweet</legend>
+  <form method="GET" action="/tweets/<%= tweet.id%>/edit">
+    <div class="form-group col-md-4">
+      <input name="tweets[name]" class="form-control" placeholder="Name"/>
+    </div>
+    <div class="form-group col-md-4">
+      <input name="tweets[tweet]"  class="form-control" placeholder="Tweets"/>
+    </div>
+    <div class="form-group col-md-4">
+      <button class="btn btn-success col-md-12">Edit a Tweet</button>
+    </div>
+  </form>
+</fieldset>

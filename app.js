@@ -11,7 +11,9 @@ var app = express();
 var router = express.Router();
 
 var moongoose = require('mongoose');
-moongoose.connect('mongodb://localhost/tweets');
+// moongoose.connect('mongodb://localhost/tweets');
+var mongoUri =  process.env.MONGOLAB_URI || 'mongodb://localhost/tweets';
+moongoose.connect(mongoUri);
 
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({ extended: true }));

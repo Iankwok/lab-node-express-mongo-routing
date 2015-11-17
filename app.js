@@ -11,9 +11,9 @@ var app = express();
 var router = express.Router();
 
 var moongoose = require('mongoose');
-// moongoose.connect('mongodb://localhost/tweets');
-var mongoUri =  process.env.MONGOLAB_URI || 'mongodb://localhost/tweets';
-moongoose.connect(mongoUri);
+moongoose.connect('mongodb://localhost/recipes');
+// var mongoUri =  process.env.MONGOLAB_URI || 'mongodb://localhost/recipes';
+// moongoose.connect(mongoUri);
 
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -36,10 +36,10 @@ if (app.get('env') === 'development') {
   });
 }
 
-app.use(require('./controllers/tweets'));
+app.use(require('./controllers/recipes'));
 
 router.get('/', function(req, res){
-  res.redirect('/tweets');
+  res.redirect('/recipes');
 })
 
 app.use(router);

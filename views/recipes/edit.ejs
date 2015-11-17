@@ -1,0 +1,17 @@
+<fieldset>
+  <legend>Edit an Recipe</legend>
+  <form method="POST" action="/recipes/<%= recipe.id%>?_method=PUT">
+    <div class="form-group col-md-4">
+      <input name="recipe[name]" class="form-control" placeholder="Name" value="<%= recipe.name %>"/>
+    </div>
+    <div class="form-group col-md-4">
+      <input name="recipe[ingredients]"  class="form-control" placeholder="Ingredients" value="<%= recipe.ingredients %>"/>
+    </div>
+        <div class="form-group col-md-4">
+      <input name="recipe[img]"  class="form-control" placeholder="Image" value="<%= recipe.img %>"/>
+    </div>
+    <div class="form-group col-md-4">
+      <button class="btn btn-warning col-md-12">Edit a Recipe</button>
+    </div>
+  </form>
+</fieldset>

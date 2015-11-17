@@ -7,7 +7,7 @@
     <div class="form-group col-md-4">
       <input name="recipes[ingredients]"  class="form-control" placeholder="Ingredients"/>
     </div>
-        <div class="form-group col-md-4">
+    <div class="form-group col-md-4">
       <input name="recipes[img]"  class="form-control" placeholder="Image URL"/>
     </div>
     <div class="form-group col-md-4">
@@ -17,20 +17,23 @@
 </fieldset>
 
 <% recipes.forEach( function(recipe){ %>
-  <div>
+  <div id='header'>
     <h2><%= recipe.name %></h2>
-    <b>Ingredients :  </b> <%= recipe.ingredients %>
-    <b>Image:  </b><%= recipe.img %>
     <img src="<%= recipe.showPhoto() %>" />
+    <p><b>Ingredients :  </b> <%= recipe.ingredients %></p>
   </div>
   <form method="PUT" action="/recipes/<%= recipe.id%>/edit">
-    <button class="btn btn-warning">
-      <span class="ion-edit"></span>
-    </button>
+    <div class="form-group col-md-2">
+      <button class="btn btn-warning form-control">
+        <span class="ion-edit"></span>
+      </button>
+    </div>
   </form>
   <form method="POST" action="/recipes/<%= recipe.id%>/delete">
-    <button class="btn btn-danger">
-      <span class="ion-close-circled"></span>
-    </button>
+    <div class="form-group col-md-2">
+      <button class="btn btn-danger form-control">
+        <span class="ion-close-circled"></span>
+      </button>
+    </div>
   </form>
 <% }) %>

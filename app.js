@@ -23,6 +23,7 @@ app.use(expressLayouts);
 app.engine('ejs', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 app.use(methodOverride('_method'));
+app.use(express.static('public'));
 
 // development error handler
 // will print stacktrace
